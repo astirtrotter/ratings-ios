@@ -42,13 +42,10 @@ class PlayersViewControllerTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as! PlayerCell
 
         // Configure the cell...
-
-        let player = players[indexPath.row]
-        cell.textLabel?.text = player.name
-        cell.detailTextLabel?.text = player.game
+        cell.player = players[indexPath.row]
         return cell
     }
 
